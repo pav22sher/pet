@@ -1,5 +1,7 @@
 package scherbak.pet.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import scherbak.pet.model.base.Model;
 
 import javax.persistence.*;
@@ -12,6 +14,8 @@ import javax.persistence.*;
 @AttributeOverrides({
         @AttributeOverride(name = "id", column = @Column(name = "player_id"))
 })
+@Getter
+@Setter
 @SequenceGenerator( name = "ID_GENERATOR", sequenceName = "player_player_id_seq", allocationSize = 1)
 public class Player  extends Model {
     /**

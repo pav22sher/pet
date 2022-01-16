@@ -1,14 +1,17 @@
 package scherbak.pet.model.base;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.SequenceGenerator;
 
 @MappedSuperclass
-@Data
+@Getter
+@Setter
 @SequenceGenerator( name = "ID_GENERATOR", sequenceName = "ID_SEQUENCE", allocationSize = 1)
 public class Model {
     @Id
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "ID_GENERATOR")
     protected Long id;
 }
